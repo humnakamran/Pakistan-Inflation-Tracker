@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inflation Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Inflation Tracker</h1>
+        <p class="subtitle">Monthly Price Analysis (Nov 2025)</p>
+    </header>
+
+    <main>
+        <!-- Stats Overview -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-title">Highest Increases (MoM)</div>
+                <ul class="stat-list" id="topIncreases">
+                    <li class="loading">Loading...</li>
+                </ul>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Top Decreases (MoM)</div>
+                <ul class="stat-list" id="topDecreases">
+                    <li class="loading">Loading...</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Data Table -->
+        <div class="table-container">
+            <div class="table-header">
+                <h2>All Items</h2>
+                <input type="text" id="searchInput" class="search-bar" placeholder="Search items...">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Unit</th>
+                        <th>Avg Price (Nov 25)</th>
+                        <th>Avg Price (Oct 25)</th>
+                        <th>Change (1 Month)</th>
+                        <th>Change (1 Year)</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td colspan="6" class="loading">Loading data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

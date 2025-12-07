@@ -1,0 +1,16 @@
+# General Files to Ignore
+*.log
+.DS_Store
+
+# Python Files to Ignore
+# Byte-compiled files
+__pycache__/
+*.pyc
+
+# Virtual Environments
+venv/
+.venv/
+
+# Database Files (Crucial for your project!)
+*.sqlite3
+*.db
